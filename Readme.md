@@ -10,6 +10,7 @@ Client: Unisys, Bangalore.
 </ul>
 
 <div id="ch01">
+
 ## How to Create/Drop User in MariaDB
 
 Create User in MariaDB:
