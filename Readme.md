@@ -343,11 +343,6 @@ MariaDB > GRANT SHOW DATABASES ON *.* to developer;
 MariaDB > GRANT ALL ON TechBrothers.* to developer; 
 ```
 
-Assign  developer  role to user TB.
-
-```sql
-MariaDB >  GRANT developer To 'developer'@'localhost';
-```
 
 Grant developer to user shyam.
 
