@@ -401,3 +401,32 @@ MariaDB > SHOW GRANTS FOR vinod@localhost;
 ```
 
 </div>
+
+<div id="ch16">
+
+### How to change Root Password for MariaDB
+
+Scenario:
+
+You are working as MariaDB / MySQL DBA and you need you change the password for root. How would you do that?
+
+Solution:
+
+You can use mysqladmin command to change the password for root user. use below statement to change the password
+
+```
+shell > sudo mysqladmin -uroot -p password mynewpassword
+```
+
+Once you will hit enter, you will be asked to provide old password for root. Provide the password for root and hit Enter. 
+
+You are all set to login to MariaDB by using new root password. Use below command to login to MariaDB
+
+
+```
+shell> mysql -u root -p
+```
+
+provide new password, in my case it was mynewpassword. 
+
+</div>
