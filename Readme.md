@@ -6,7 +6,6 @@ Client: Unisys, Bangalore.
 ### Table of content
 ---
 <ul>
-    <!--
     <li><a href="#ch01">How to Create/Drop User in MariaDB</a></li>
     <li><a href="#ch02">How to Grant all the permissions to User in MariaDB</a></li>
     <li><a href="#ch03">How to Grant Full Permission on a Database to a User in MariaDB</a></li>
@@ -15,14 +14,17 @@ Client: Unisys, Bangalore.
     <li><a href="#ch06">How to Grant Insert Permission on Table/s to a User in MariaDB</a></li>
     <li><a href="#ch07">How to Grant Drop/Create Table Permission to a User in MariaDB</a></li>
     <li><a href="#ch08">How to Grant Delete Permission on Table/s to a User in MariaDB</a></li>
+    <li><a href="#ch14">How to create ROLE in MariaDB</a></li>
+    <!--
     <li><a href="#ch09"></a></li>
     <li><a href="#ch10"></a></li>
     <li><a href="#ch11"></a></li>
     <li><a href="#ch12"></a></li>
+    <li><a href="#ch13"></a></li>
     -->
 </ul>
 
-<!--
+
 <div id="ch01">
 
 ## How to Create/Drop User in MariaDB
@@ -309,4 +311,81 @@ MariaDB > GRANT DELETE ON training.* to 'vinod'@'localhost'
 
 <div id="ch12">
 </div>
--->
+
+<div id="ch13">
+</div>
+
+<div id="ch14">
+
+### How to create ROLE in MariaDB
+
+Roles in MairaDB really helps to group the permissions to single object ( Role) and then you can assign role to user instead of you create each user indiviually and then grant permissions.
+
+Syntax:
+
+```sql
+MariaDB > Create ROLE ROLE_Name;
+```
+
+Example : 
+
+Let's say we want to create Select role with  name "developer" and then Grant Show databases and Select permission on all the tables in TechBrothers Database. Once the role is created we would like to assign user TB and shyam to it.
+
+```sql
+MariaDB > Create Role developer; 
+```
+
+Grant Permissions to Role " developer"
+
+
+```sql
+MariaDB > GRANT SHOW DATABASES ON *.* to developer;
+MariaDB > GRANT ALL ON TechBrothers.* to developer; 
+```
+
+Assign  developer  role to user TB.
+
+```sql
+MariaDB >  GRANT developer To 'TB'@'localhost';
+```
+
+Grant developer to user shyam.
+
+```sql
+MariaDB >  GRANT developer To 'shyam'@'localhost'; 
+```
+
+Now once the user TB or shyam will login to MairaDB, they can use this role. Once the user login , they can check which role they are using by using below statment.
+
+
+```sql
+MariaDB > Select Current_Role; 
+```
+
+First time you are going to get below output.
+
+```
++--------------+
+| Current_Role |
++--------------+
+| NULL         |
++--------------+
+1 row in set (0.00 sec)
+```
+
+If user TB or shyam will try to select the data from TechBrothers database or run show databases statement, they will get permission denied error. They have to set the role first. Below statement can be used to set the role.
+
+```sql
+MariaDB >  set Role developer; 
+```
+
+Now they should be able to use all the object on wich developer has permission.
+User can also set the default Role by using below statement so he/she does ont have to set the role everytime login.
+
+```sql
+MariaDB> set default role developer;
+```
+
+</div>
+
+
