@@ -350,7 +350,7 @@ Grant developer to user shyam.
 MariaDB >  GRANT developer To 'shyam'@'localhost'; 
 ```
 
-Now once the user shyam or shyam will login to MairaDB, they can use this role. Once the user login , they can check which role they are using by using below statment.
+Now once the user shyam or john will login to MairaDB, they can use this role. Once the user login , they can check which role they are using by using below statment.
 
 
 ```sql
@@ -368,7 +368,7 @@ First time you are going to get below output.
 1 row in set (0.00 sec)
 ```
 
-If user shyam or shyam will try to select the data from training database or run show databases statement, they will get permission denied error. They have to set the role first. Below statement can be used to set the role.
+If user shyam or john will try to select the data from training database or run show databases statement, they will get permission denied error. They have to set the role first. Below statement can be used to set the role.
 
 ```sql
 MariaDB >  set Role developer; 
