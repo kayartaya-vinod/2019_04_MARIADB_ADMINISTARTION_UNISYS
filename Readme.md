@@ -329,7 +329,7 @@ MariaDB > Create ROLE ROLE_Name;
 
 Example : 
 
-Let's say we want to create Select role with  name "developer" and then Grant Show databases and Select permission on all the tables in TechBrothers Database. Once the role is created we would like to assign user TB and shyam to it.
+Let's say we want to create Select role with  name "developer" and then Grant Show databases and Select permission on all the tables in training Database. Once the role is created we would like to assign user shyam and john to it.
 
 ```sql
 MariaDB > Create Role developer; 
@@ -340,7 +340,7 @@ Grant Permissions to Role " developer"
 
 ```sql
 MariaDB > GRANT SHOW DATABASES ON *.* to developer;
-MariaDB > GRANT ALL ON TechBrothers.* to developer; 
+MariaDB > GRANT ALL ON training.* to developer; 
 ```
 
 
@@ -350,7 +350,7 @@ Grant developer to user shyam.
 MariaDB >  GRANT developer To 'shyam'@'localhost'; 
 ```
 
-Now once the user TB or shyam will login to MairaDB, they can use this role. Once the user login , they can check which role they are using by using below statment.
+Now once the user shyam or shyam will login to MairaDB, they can use this role. Once the user login , they can check which role they are using by using below statment.
 
 
 ```sql
@@ -368,7 +368,7 @@ First time you are going to get below output.
 1 row in set (0.00 sec)
 ```
 
-If user TB or shyam will try to select the data from TechBrothers database or run show databases statement, they will get permission denied error. They have to set the role first. Below statement can be used to set the role.
+If user shyam or shyam will try to select the data from training database or run show databases statement, they will get permission denied error. They have to set the role first. Below statement can be used to set the role.
 
 ```sql
 MariaDB >  set Role developer; 
