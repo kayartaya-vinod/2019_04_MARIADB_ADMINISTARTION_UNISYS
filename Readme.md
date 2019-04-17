@@ -6,6 +6,7 @@ Client: Unisys, Bangalore.
 ### Table of content
 ---
 <ul>
+    <!--
     <li><a href="#ch01">How to Create/Drop User in MariaDB</a></li>
     <li><a href="#ch02"></a></li>
     <li><a href="#ch03"></a></li>
@@ -18,8 +19,10 @@ Client: Unisys, Bangalore.
     <li><a href="#ch10"></a></li>
     <li><a href="#ch11"></a></li>
     <li><a href="#ch12"></a></li>
+    -->
 </ul>
 
+<!--
 <div id="ch01">
 
 ## How to Create/Drop User in MariaDB
@@ -59,4 +62,5 @@ Let's say if you would like to drop user `vinod` that you have created in Localh
 MariaDB > Drop user 'vinod'@'Localhost'; 
 ```
 </div>
+-->
 
