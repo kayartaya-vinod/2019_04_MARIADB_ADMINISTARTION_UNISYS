@@ -15,6 +15,7 @@ Client: Unisys, Bangalore.
     <li><a href="#ch07">How to Grant Drop/Create Table Permission to a User in MariaDB</a></li>
     <li><a href="#ch08">How to Grant Delete Permission on Table/s to a User in MariaDB</a></li>
     <li><a href="#ch14">How to create ROLE in MariaDB</a></li>
+    <li><a href="#ch15">How to see Permissions of a user in MariaDB</a></li>
     <!--
     <li><a href="#ch09"></a></li>
     <li><a href="#ch10"></a></li>
@@ -384,3 +385,19 @@ MariaDB> set default role developer;
 </div>
 
 
+<div id="ch15">
+
+### How to see Permissions of a user in MariaDB
+Once you are login to MariaDB, you can run below statement to see the permission of currently login user account.
+
+```sql
+MariaDB > Show Grants;
+```
+
+If you want to check the permissions of other users, you can do as long as you have the permissions to do by using below statement.
+
+```sql
+MariaDB > SHOW GRANTS FOR vinod@localhost;
+```
+
+</div>
