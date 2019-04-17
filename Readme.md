@@ -17,6 +17,7 @@ Client: Unisys, Bangalore.
     <li><a href="#ch14">How to create ROLE in MariaDB</a></li>
     <li><a href="#ch15">How to see Permissions of a user in MariaDB</a></li>
     <li><a href="#ch16">How to change Root Password for MariaDB</a></li>
+</ul>
     
     <!--
     <li><a href="#ch09"></a></li>
@@ -25,7 +26,6 @@ Client: Unisys, Bangalore.
     <li><a href="#ch12"></a></li>
     <li><a href="#ch13"></a></li>
     -->
-</ul>
 
 
 <div id="ch01">
