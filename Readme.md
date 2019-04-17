@@ -346,7 +346,7 @@ MariaDB > GRANT ALL ON TechBrothers.* to developer;
 Assign  developer  role to user TB.
 
 ```sql
-MariaDB >  GRANT developer To 'TB'@'localhost';
+MariaDB >  GRANT developer To 'developer'@'localhost';
 ```
 
 Grant developer to user shyam.
