@@ -16,6 +16,8 @@ Client: Unisys, Bangalore.
     <li><a href="#ch08">How to Grant Delete Permission on Table/s to a User in MariaDB</a></li>
     <li><a href="#ch14">How to create ROLE in MariaDB</a></li>
     <li><a href="#ch15">How to see Permissions of a user in MariaDB</a></li>
+    <li><a href="#ch16">How to change Root Password for MariaDB</a></li>
+    
     <!--
     <li><a href="#ch09"></a></li>
     <li><a href="#ch10"></a></li>
