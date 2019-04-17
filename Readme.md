@@ -24,7 +24,8 @@ Client: Unisys, Bangalore.
 
 ## How to Create/Drop User in MariaDB
 
-Create User in MariaDB:
+### Create User in MariaDB:
+
 To create a user in MariaDB , you can use below Syntax
 
 ```sql
@@ -44,7 +45,7 @@ To get the list of all users , below statement can be used.
 MariaDB > Select * from mysql.user; 
 ```
 
-Drop User in MariaDB: 
+### Drop User in MariaDB: 
 
 To drop user in MariaDB , you can use below statement
 
