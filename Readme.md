@@ -19,13 +19,13 @@ Client: Unisys, Bangalore.
     <li><a href="#ch16">How to change Root Password for MariaDB</a></li>
 </ul>
     
-    <!--
-    <li><a href="#ch09"></a></li>
-    <li><a href="#ch10"></a></li>
-    <li><a href="#ch11"></a></li>
-    <li><a href="#ch12"></a></li>
-    <li><a href="#ch13"></a></li>
-    -->
+<!--
+<li><a href="#ch09"></a></li>
+<li><a href="#ch10"></a></li>
+<li><a href="#ch11"></a></li>
+<li><a href="#ch12"></a></li>
+<li><a href="#ch13"></a></li>
+-->
 
 
 <div id="ch01">
