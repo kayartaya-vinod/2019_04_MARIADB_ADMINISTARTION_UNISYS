@@ -12,9 +12,9 @@ Client: Unisys, Bangalore.
     <li><a href="#ch03">How to Grant Full Permission on a Database to a User in MariaDB</a></li>
     <li><a href="#ch04">How to Grant Select Permission on Table/s  to User in MariaDB</a></li>
     <li><a href="#ch05">How to Grant Update Permission on Table/s to a User in MariaDB</a></li>
-    <li><a href="#ch06"></a></li>
-    <li><a href="#ch07"></a></li>
-    <li><a href="#ch08"></a></li>
+    <li><a href="#ch06">How to Grant Insert Permission on Table/s to a User in MariaDB</a></li>
+    <li><a href="#ch07">How to Grant Drop/Create Table Permission to a User in MariaDB</a></li>
+    <li><a href="#ch08">How to Grant Delete Permission on Table/s to a User in MariaDB</a></li>
     <li><a href="#ch09"></a></li>
     <li><a href="#ch10"></a></li>
     <li><a href="#ch11"></a></li>
@@ -109,21 +109,20 @@ WITH GRANT OPTION, user will be able to provide permissions to other users on th
 
 Example: 
 
-Let's create user TB and provide full permissions on Database name "TechBrothers" , We also want the TB user to have permissions to GRANT permissions on "TechBrothers" databases to other users.
+Let's create user vk and provide full permissions on Database name "training" , We also want the vk user to have permissions to GRANT permissions on "training" databases to other users.
 
 ```sql
 MariaDB > Create User 'vk'@'localhost' Identified by "topsecret";
 ```
 
-Grant full permissions on TechBrothers Databases to user account TB.
+Grant full permissions on training Databases to user account vk.
 
 ```sql
-MariaDB > GRANT ALL ON TechBrothers.* TO 'vk'@'localhost' With GRANT OPTION; 
+MariaDB > GRANT ALL ON training.* TO 'vk'@'localhost' With GRANT OPTION; 
 ```
 
 </div>
 
--->
 
 <div id="ch04">
 
@@ -147,16 +146,16 @@ MariaDB > GRANT select ON DatabaseName.* to 'UserName'@'Host'
 
 Example :
 
-Let's say that if we have table test in Techbrothers Database and we would like to provide Select permission to user `vinod` in MariaDB. we can use below statement
+Let's say that if we have table test in training Database and we would like to provide Select permission to user `vinod` in MariaDB. we can use below statement
 
 ```sql
-MariaDB > GRANT select ON Techbrothers.test to 'vinod'@'localhost' 
+MariaDB > GRANT select ON training.test to 'vinod'@'localhost' 
 ```
 
-If we want to provide Select permission on all the tables in Techbrothers Database to user account `vinod` in MariaDB, we can use below statement
+If we want to provide Select permission on all the tables in training Database to user account `vinod` in MariaDB, we can use below statement
 
 ```sql
-MariaDB > GRANT select ON Techbrothers.* to 'vinod'@'localhost' 
+MariaDB > GRANT select ON training.* to 'vinod'@'localhost' 
 ```
 
 </div>
@@ -183,27 +182,120 @@ MariaDB > GRANT UPDATE ON DatabaseName.* to 'UserName'@'Host'
 
 Example :
 
-Let's say that if we have table "test" in Techbrothers Database and we would like to provide Update permission to user "vinod" in MariaDB. we can use below statement
+Let's say that if we have table "test" in training Database and we would like to provide Update permission to user "vinod" in MariaDB. we can use below statement
 
 ```sql
-MariaDB > GRANT UPDATE ON Techbrothers.test to 'vinod'@'localhost' 
+MariaDB > GRANT UPDATE ON training.test to 'vinod'@'localhost' 
 ```
 
-If we would like to provide UPDATE permission on all the tables in Techbrothers Database to user account vinod in MariaDB, we can use below statement
+If we would like to provide UPDATE permission on all the tables in training Database to user account vinod in MariaDB, we can use below statement
 
 ```sql
-MariaDB > GRANT UPDATE ON Techbrothers.* to 'vinod'@'localhost' 
+MariaDB > GRANT UPDATE ON training.* to 'vinod'@'localhost' 
 ```
 </div>
 
 <div id="ch06">
 
+### How to Grant Insert Permission on Table/s to a User in MariaDB
+
+Below Syntax can be used to provide INSERT permission on table/s in MariaDB.
+
+Syntax:
+
+On Single Table
+
+```sql
+MariaDB > GRANT INSERT ON tableName to 'UserName'@'Host' 
+```
+
+On all the tables in a database
+ 
+```sql
+MariaDB > GRANT INSERT ON DatabaseName.* to 'UserName'@'Host' 
+```
+
+Example :
+
+Let's say that if we have table "test" in training Database and we would like to provide INSERT permission to user "vinod" in MariaDB. we can use below statement
+
+```sql
+MariaDB > GRANT INSERT ON training.test to 'vinod'@'localhost' 
+```
+
+If we would like to provide INSERT permission on all the tables in training Database to user account vinod in MariaDB, we can use below statement
+
+```sql
+MariaDB > GRANT INSERT ON training.* to 'vinod'@'localhost' 
+```
 </div>
 
 <div id="ch07">
+
+### How to Grant Drop/Create Table Permission to a User in MariaDB
+
+Below Syntax can be used to provide Drop and Create permission on table/s in MariaDB.
+
+Syntax:
+
+On Single Table
+
+```sql
+MariaDB > GRANT Drop, Create ON tableName to 'UserName'@'Host' 
+```
+
+On all the tables in a database
+
+```sql
+MariaDB > GRANT Drop, Create ON DatabaseName.* to 'UserName'@'Host' 
+```
+
+
+Example :
+
+Let's say that if you like to provide Drop and Create permission to user "vinod" in database training. we can use below statement
+
+```sql
+MariaDB > GRANT Drop, Create ON training.* to 'vinod'@'localhost' 
+```
+
 </div>
 
 <div id="ch08">
+
+### How to Grant Delete Permission on Table/s to a User in MariaDB
+
+Below Syntax can be used to provide DELETE permission on table/s in MariaDB.
+
+Syntax:
+
+On Single Table
+
+```sql
+MariaDB > GRANT DELETE ON tableName to 'UserName'@'Host' 
+```
+
+On all the tables in a database
+ 
+```sql
+MariaDB > GRANT DELETE ON DatabaseName.* to 'UserName'@'Host' 
+```
+
+
+Example :
+
+Let's say that if we have table "test" in training Database and we would like to provide DELETE permission to user "vinod" in MariaDB. we can use below statement
+
+```sql
+MariaDB > GRANT DELETE ON training.test to 'vinod'@'localhost' 
+```
+
+If we would like to provide DELETE permission on all the tables in training Database to user account vinod in MariaDB, we can use below statement
+
+```sql
+MariaDB > GRANT DELETE ON training.* to 'vinod'@'localhost' 
+```
+
 </div>
 
 <div id="ch09">
@@ -217,3 +309,4 @@ MariaDB > GRANT UPDATE ON Techbrothers.* to 'vinod'@'localhost'
 
 <div id="ch12">
 </div>
+-->
