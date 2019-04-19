@@ -3,6 +3,10 @@
 Date: 17th and 19th April 2019<br/>
 Client: Unisys, Bangalore.
 
+For any clarifications, write to me on <a href="mailto:vinod@vinod.co">vinod@vinod.co</a>
+
+For more visit <a href="https://vinod.co">https://vinod.co</a>
+
 ### Table of content
 ---
 <ul>
@@ -17,6 +21,7 @@ Client: Unisys, Bangalore.
     <li><a href="#ch14">How to create ROLE in MariaDB</a></li>
     <li><a href="#ch15">How to see Permissions of a user in MariaDB</a></li>
     <li><a href="#ch16">How to change Root Password for MariaDB</a></li>
+    <li><a href="#sp">Stored procedure demos</a></li>
 </ul>
     
 <!--
@@ -430,5 +435,76 @@ shell> mysql -u root -p
 ```
 
 provide new password, in my case it was mynewpassword. 
+
+</div>
+
+<div id="sp">
+
+```sql
+--This is an example of stored procedure
+
+-- delimiter command defines a new symbol or a bunch of symbols to be the new delimiter
+
+-- To execute a SP, use the call command like below:
+-- call get_product_count();
+
+use northwind;
+drop procedure if exists get_product_count;
+drop procedure if exists get_order_total;
+drop procedure if exists get_product_groups;
+
+delimiter $$
+
+-- procedure to get the total number of products
+create procedure get_product_count()
+begin
+	select count(*) as product_count from PRODUCTS;
+end $$
+
+
+-- procedure to get order total for a given order_id
+-- (example of IN, OUT parameters)
+create procedure get_order_total(IN p_order_id int, OUT p_order_total double)
+begin
+	select sum(unit_price*quantity*(1-discount))
+		into p_order_total
+		from ORDER_DETAILS
+		where order_id = p_order_id;
+
+	if p_order_total is null then
+		signal SQLSTATE '45001'
+		set MESSAGE_TEXT = 'Invalid order id';
+	end if;
+end$$
+
+-- procedure for demonstration of variables, if-else and loops
+create procedure get_product_groups(group_count int, min_price double, max_price double)
+begin
+	-- variables must be declared before any executable statement begins
+	declare min_pr_price double;
+	declare max_pr_price double;
+	declare diff double;
+	declare i int default 1;
+
+	select min(unit_price), max(unit_price)
+		into min_pr_price, max_pr_price
+		from PRODUCTS	
+		where unit_price between min_price and max_price;
+
+	set diff = (max_pr_price - min_pr_price) / group_count;
+	
+	while i <= group_count do
+		select product_id, product_name, unit_price
+			from PRODUCTS
+			where unit_price between min_pr_price and min_pr_price+diff
+			order by unit_price;
+		set i = i+1;
+		set min_pr_price = min_pr_price+diff;
+	end while;
+end$$
+
+delimiter ;
+```
+
 
 </div>
