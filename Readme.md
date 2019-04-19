@@ -3,9 +3,9 @@
 Date: 17th and 19th April 2019<br/>
 Client: Unisys, Bangalore.
 
-For any clarifications, write to me on <a href="mailto:vinod@vinod.co">vinod@vinod.co</a>
+For any clarifications, write to me on <a target="_blank" href="mailto:vinod@vinod.co">vinod@vinod.co</a>
 
-For more visit <a href="https://vinod.co">https://vinod.co</a>
+For more visit <a target="_blank" href="https://vinod.co">https://vinod.co</a>
 
 ### Table of content
 ---
